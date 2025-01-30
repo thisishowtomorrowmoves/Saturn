@@ -121,6 +121,18 @@
             text-align: center;
             line-height: 1.5;
         }
+
+        /* Watermark text style */
+        .watermark {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.5); /* Light white color with transparency */
+            font-weight: normal;
+            opacity: 0.5;
+            pointer-events: none; /* Ensures it doesn't interfere with other elements */
+        }
     </style>
 </head>
 <body>
@@ -135,7 +147,7 @@
             <a href="index.html" class="nav-button">Home</a> <!-- Home Button -->
             <a href="rules.html" class="nav-button">Rules</a> <!-- Rules Button -->
             <a href="staff.html" class="nav-button">Staff List</a> <!-- New Button (About) -->
-            <a href="affilates.html" class="nav-button">affilates</a> <!-- New Button (About) -->
+            <a href="affilates.html" class="nav-button">Affiliates</a> <!-- New Button (About) -->
         </div>
     </header>
 
@@ -149,5 +161,11 @@
         </div>
     </div>
 
+    <!-- Watermark Text -->
+    <div class="watermark">
+        © 2025 Bea's Bees. All rights reserved.
+    </div>
+
 </body>
 </html>
+
