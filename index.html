@@ -133,6 +133,23 @@
             opacity: 0.5;
             pointer-events: none; /* Ensures it doesn't interfere with other elements */
         }
+
+        /* Mute button style */
+        .mute-button {
+            background-color: #7289da; /* Match the join button color */
+            color: white;
+            font-size: 16px;
+            padding: 10px 15px;
+            border-radius: 25px;
+            margin-top: 20px;
+            cursor: pointer;
+            border: none;
+            font-weight: bold;
+        }
+
+        .mute-button:hover {
+            background-color: #5b6b98; /* Lighter shade for hover effect */
+        }
     </style>
 </head>
 <body>
@@ -159,12 +176,37 @@
         <div class="info-box">
             <p>Bea’s Bees is a server dedicated to the British singer-songwriter, Beabadoobee. Come join us to play our daily games, catch up on the latest news, and talk to other fans!</p>
         </div>
+        
+        <!-- Mute Button -->
+        <button class="mute-button" id="muteButton">Mute Music</button>
     </div>
 
     <!-- Watermark Text -->
     <div class="watermark">
         © 2025 Bea's Bees. All rights reserved.
     </div>
+
+    <!-- Audio player -->
+    <audio id="backgroundMusic" loop autoplay>
+        <source src="real_man.mp3" type="audio/mp3"> <!-- Replace with your music file path -->
+        Your browser does not support the audio element.
+    </audio>
+
+    <script>
+        // Mute button functionality
+        const muteButton = document.getElementById('muteButton');
+        const backgroundMusic = document.getElementById('backgroundMusic');
+
+        muteButton.addEventListener('click', () => {
+            if (backgroundMusic.muted) {
+                backgroundMusic.muted = false;
+                muteButton.textContent = "Mute Music"; // Update button text
+            } else {
+                backgroundMusic.muted = true;
+                muteButton.textContent = "Unmute Music"; // Update button text
+            }
+        });
+    </script>
 
 </body>
 </html>
