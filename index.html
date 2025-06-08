@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Saturn - Discord Bot</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #fff0f5;
+      color: #333;
+      line-height: 1.6;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    /* Navigation bar */
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: #ffe4e1;
+      padding: 10px 20px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .navbar img {
+      height: 40px;
+      width: 40px;
+      border-radius: 50%;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-links a {
+      color: #d63384;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: #a82465;
+    }
+
+    /* Dark mode toggle button styling */
+    #darkModeToggle {
+      padding: 6px 12px;
+      font-weight: 600;
+      background: transparent;
+      border: 2px solid #d63384;
+      border-radius: 6px;
+      color: #d63384;
+      cursor: pointer;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    #darkModeToggle:hover {
+      background-color: #d63384;
+      color: white;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 100px 20px;
+      background: linear-gradient(135deg, #ffb6c1, #ffe4e1);
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      color: #d63384;
+      margin-bottom: 0.5em;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      color: #6d2c5b;
+      margin-bottom: 1.5em;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 24px;
+      font-size: 1rem;
+      text-decoration: none;
+      font-weight: bold;
+      color: #d63384;
+      background-color: #fff0f5;
+      border-radius: 8px;
+      border: 2px solid transparent;
+      background-image: linear-gradient(#fff0f5, #fff0f5), linear-gradient(to right, #fff, #ffb6c1);
+      background-origin: border-box;
+      background-clip: padding-box, border-box;
+      box-shadow: 0 0 10px rgba(255, 182, 193, 0.4);
+      transition: background 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #ffe6f0;
+    }
+
+    .features {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 60px 20px;
+      gap: 40px;
+      background-color: #fff5fa;
+    }
+
+    .feature {
+      flex: 1 1 250px;
+      max-width: 300px;
+      text-align: center;
+    }
+
+    .feature h2 {
+      font-size: 1.5rem;
+      color: #d63384;
+      margin-bottom: 0.5em;
+    }
+
+    .footer {
+      text-align: center;
+      padding: 30px 20px;
+      background-color: #ffe4e1;
+      font-size: 0.9rem;
+      color: #a85575;
+    }
+
+    /* Dark mode styles */
+    body.dark-mode {
+      background-color: #121212 !important;
+      color: #eee !important;
+    }
+
+    body.dark-mode .navbar {
+      background-color: #2a2a2a !important;
+      box-shadow: none !important;
+    }
+
+    body.dark-mode .nav-links a {
+      color: #ff88b8 !important;
+    }
+
+    body.dark-mode .nav-links a:hover {
+      color: #ff5599 !important;
+    }
+
+    body.dark-mode .hero {
+      background: linear-gradient(135deg, #3a1a2c, #4b2a40) !important;
+      color: #f9c4d2 !important;
+    }
+
+    body.dark-mode .btn {
+      color: #ff88b8 !important;
+      background-color: #2a2a2a !important;
+      box-shadow: 0 0 10px rgba(255, 136, 184, 0.8) !important;
+      border: 2px solid #ff88b8 !important;
+    }
+
+    body.dark-mode .btn:hover {
+      background-color: #3d3d3d !important;
+    }
+
+    body.dark-mode .features {
+      background-color: #1f1f1f !important;
+    }
+
+    body.dark-mode .feature h2 {
+      color: #ff88b8 !important;
+    }
+
+    body.dark-mode .footer {
+      background-color: #2a2a2a !important;
+      color: #bb6688 !important;
+    }
+
+    @media (max-width: 600px) {
+      .nav-links {
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation bar -->
+  <nav class="navbar">
+    <img src="sicon.jpeg" alt="Saturn Logo" />
+    <div class="nav-links">
+      <a href="commands.html">Commands</a>
+      <a href="tos.html">Terms</a>
+      <a href="help.html">Help</a>
+    </div>
+    <button id="darkModeToggle" aria-label="Toggle Dark Mode">Dark Mode</button>
+  </nav>
+
+  <!-- Hero section -->
+  <header class="hero">
+    <h1>Saturn</h1>
+    <p>Your all-in-one cute and powerful Discord bot</p>
+    <a href="YOUR_INVITE_LINK" class="btn">Invite Saturn</a>
+  </header>
+
+  <!-- Features section -->
+  <section class="features">
+    <div class="feature">
+      <h2>Friendly Commands</h2>
+      <p>Moderation, music, fun and utilities—just a command away.</p>
+    </div>
+    <div class="feature">
+      <h2>Custom Looks</h2>
+      <p>Change prefixes, embed colors, and more—your vibe, your Saturn.</p>
+    </div>
+    <div class="feature">
+      <h2>Reliable Hosting</h2>
+      <p>Online 24/7 to protect, play, and entertain your server.</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2025 Saturn Bot | Made for the Ro-Ent community</p>
+  </footer>
+
+  <script>
+    const toggleBtn = document.getElementById('darkModeToggle');
+    const body = document.body;
+
+    toggleBtn.addEventListener('click', () => {
+      body.classList.toggle('dark-mode');
+      if (body.classList.contains('dark-mode')) {
+        toggleBtn.textContent = 'Light Mode';
+      } else {
+        toggleBtn.textContent = 'Dark Mode';
+      }
+    });
+  </script>
+
+</body>
+</html>

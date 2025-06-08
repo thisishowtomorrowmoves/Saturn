@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Saturn Bot - Commands</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #fff0f5;
+      color: #333;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: #ffe4e1;
+      padding: 10px 20px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .navbar img {
+      height: 40px;
+      width: 40px;
+      border-radius: 50%;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-links a {
+      color: #d63384;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: #a82465;
+    }
+
+    #darkModeToggle {
+      padding: 6px 12px;
+      font-weight: 600;
+      background: transparent;
+      border: 2px solid #d63384;
+      border-radius: 6px;
+      color: #d63384;
+      cursor: pointer;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    #darkModeToggle:hover {
+      background-color: #d63384;
+      color: white;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #d63384;
+      margin-bottom: 1em;
+    }
+
+    .command {
+      background-color: #ffe4eb;
+      padding: 15px 20px;
+      border-radius: 10px;
+      margin-bottom: 15px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+      transition: background-color 0.3s, box-shadow 0.3s;
+    }
+
+    .command h2 {
+      margin: 0 0 0.3em;
+      font-size: 1.2rem;
+      color: #a82465;
+    }
+
+    .command p {
+      margin: 0;
+    }
+
+    .footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #ffe4e1;
+      font-size: 0.9rem;
+      color: #a85575;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    /* Dark mode styles */
+    body.dark-mode {
+      background-color: #121212 !important;
+      color: #eee !important;
+    }
+
+    body.dark-mode .navbar {
+      background-color: #2a2a2a !important;
+      box-shadow: none !important;
+    }
+
+    body.dark-mode .nav-links a {
+      color: #ff88b8 !important;
+    }
+
+    body.dark-mode .nav-links a:hover {
+      color: #ff5599 !important;
+    }
+
+    body.dark-mode #darkModeToggle {
+      border-color: #ff88b8 !important;
+      color: #ff88b8 !important;
+    }
+
+    body.dark-mode #darkModeToggle:hover {
+      background-color: #ff88b8 !important;
+      color: #2a2a2a !important;
+    }
+
+    body.dark-mode .command {
+      background-color: #2a2a2a !important;
+      box-shadow: 0 2px 6px rgba(255, 136, 184, 0.4) !important;
+    }
+
+    body.dark-mode .command h2 {
+      color: #ff88b8 !important;
+    }
+
+    body.dark-mode .footer {
+      background-color: #2a2a2a !important;
+      color: #bb6688 !important;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <img src="sicon.jpeg" alt="Saturn Logo" />
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="commands.html">Commands</a>
+      <a href="tos.html">Terms</a>
+      <a href="help.html">Help</a>
+    </div>
+    <button id="darkModeToggle" aria-label="Toggle Dark Mode">Dark Mode</button>
+  </nav>
+
+  <!-- Command list -->
+  <main class="container">
+    <h1>Commands</h1>
+
+    <div class="command">
+      <h2>.shelp</h2>
+      <p>Displays all commands and usage info.</p>
+    </div>
+
+    <div class="command">
+      <h2>.ban [@user] [reason]</h2>
+      <p>Bans a user from the server.</p>
+    </div>
+
+    <div class="command">
+      <h2>.unban [userID]</h2>
+      <p>Checks Saturn's response time.</p>
+    </div>
+
+    <div class="command">
+      <h2>.kick [@user] [reason]</h2>
+      <p>Kicks a member from the server.</p>
+    </div>
+
+    <div class="command">
+      <h2>.mute [@user] [reason]</h2>
+      <p>Mutes a member for 10hr-1wk.</p>
+    </div>
+
+    <div class="command">
+      <h2>.unmute [@user]</h2>
+      <p>Unmutes a member.</p>
+    </div>
+
+    <div class="command">
+      <h2>.roleadd [@user] [@role]</h2>
+      <p>Grants a user a role.</p>
+    </div>
+
+    <div class="command">
+      <h2>.roleremove [@user] [@role]</h2>
+      <p>Removes a users role.</p>
+    </div>
+
+    <div class="command">
+      <h2>.purge [ammount]</h2>
+      <p>Mass deletes messages, e.g .purge 100.</p>
+    </div>
+
+    <div class="command">
+      <h2>.login [LastFMuser]</h2>
+      <p>Logs the bot into your fm account.</p>
+    </div>
+
+    <div class="command">
+      <h2>.fm</h2>
+      <p>Shows your last played song.</p>
+    </div>
+
+    <div class="command">
+      <h2>.ping</h2>
+      <p>Checks Saturn's response time.</p>
+    </div>
+
+    <div class="command">
+      <h2>.botinfo</h2>
+      <p>Gives info on the bot.</p>
+    </div>
+  </main>
+
+  <footer class="footer">
+    &copy; 2025 Saturn Bot | Command reference
+  </footer>
+
+  <script>
+    const toggleBtn = document.getElementById('darkModeToggle');
+    const body = document.body;
+
+    toggleBtn.addEventListener('click', () => {
+      body.classList.toggle('dark-mode');
+      if (body.classList.contains('dark-mode')) {
+        toggleBtn.textContent = 'Light Mode';
+      } else {
+        toggleBtn.textContent = 'Dark Mode';
+      }
+    });
+  </script>
+
+</body>
+</html>
+
